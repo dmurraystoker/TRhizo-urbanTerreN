@@ -28,7 +28,7 @@ library(tidyverse)
 load("~/Documents/Research/TRhizo-urbanTerreN/R/1-analysis/1-analysis-workspace.RData")
 
 ## Source code to load all packages for figure creation
-source("~/Documents/R Materials/R Script/DMS-ggplot2-supplement.R")
+source("R/2-figures/DMS-ggplot2-supplement.R")
 
 
 ## Set colour palette (caleco)
