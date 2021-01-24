@@ -9,6 +9,8 @@ Data, metadata, and all R code for reproducing analyses for the manuscript:
 
 Murray-Stoker, D., and M. T. J. Johnson. Ecological consequences of urbanization on a legume-rhizobia mutualism.
 
+[![DOI](https://zenodo.org/badge/332053459.svg)](https://zenodo.org/badge/latestdoi/332053459)
+
 
 ## Abstract
 
