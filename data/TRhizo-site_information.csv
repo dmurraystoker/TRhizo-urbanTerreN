@@ -1,0 +1,50 @@
+site.ID,date,start.time,latitude,longitude,notes
+site.1,06-Aug-18,9:00am,43.65274,-79.391496,Grange park
+site.2,06-Aug-18,10:09am,43.663068,-79.393596,Hart House
+site.3,06-Aug-18,10:52am,43.664942,-79.394635,Philospher's walk
+site.4,06-Aug-18,11:30am,43.66566,-79.40506,Aura Lee field
+site.5,06-Aug-18,12:14pm,43.664044,-79.422492,Christie Pits
+site.6,06-Aug-18,1:25pm,43.712546,-79.447836,Wenderly park
+site.7,06-Aug-18,1:54pm,43.71461,-79.46605,Caledonia park
+site.8,06-Aug-18,2:19pm,43.70744,-79.47205,Quality Wood Service
+site.9,07-Aug-18,10:17am,43.70496,-79.48656,Amesbury park
+site.10,07-Aug-18,11:12am,43.70502,-79.50134,Upwood Greenbelt
+site.11,07-Aug-18,1:00pm,43.69941,-79.5206,Cruikshank park-White clover
+site.12,07-Aug-18,2:08pm,43.69441,-79.53394,Valleyfied park
+site.13,07-Aug-18,2:42pm,43.68173,-79.5451,Silvercreek park
+site.14,07-Aug-18,3:15pm,43.67512,-79.56273,Richview park
+site.15,07-Aug-18,3:49pm,43.6759,-79.57203,Willowridge park
+site.16,14-Aug-18,8:40am,43.664458,-79.587909,Power line gap
+site.17,14-Aug-18,10:15am,43.65471,-79.59443,Centennial park
+site.18,14-Aug-18,10:59am,43.648934,-79.607687,Commercial park
+site.19,14-Aug-18,11:49am,43.62931,-79.62846,Canadian Tire gas station
+site.20,14-Aug-18,12:44pm,43.623181,-79.643923,Cricket pitch
+site.21,14-Aug-18,2:45pm,43.61584,-79.64792,Eastgate park
+site.22,14-Aug-18,3:34pm,43.60199,-79.65338,Kingsbridge common
+site.23,17-Aug-18,9:48am,43.59256,-79.66184,Madill Common park
+site.24,17-Aug-18,10:35am,43.58807,-79.66837,Sandford Farm park
+site.25,17-Aug-18,12:25pm,43.58094,-79.67506,Clover Meadows park
+site.26,17-Aug-18,12:57pm,43.57582,-79.68316,Rosebush common
+site.27,17-Aug-18,2:18pm,43.57145,-79.69863,Barberton park
+site.28,17-Aug-18,2:46pm,43.56451,-79.7012,Forest Hill park
+site.29,17-Aug-18,3:20pm,43.56231,-79.70967,Erin Centre Blvd.
+site.30,17-Aug-18,4:06pm,43.55285,-79.71004,John Pallett park
+site.31,22-Aug-18,9:10am,43.54864,-79.72176,Golder Community park
+site.32,22-Aug-18,9:35am,43.54401,-79.728,Marc Muzzo Memorial Woods and park
+site.33,22-Aug-18,10:01am,43.538788,-79.733648,Mcleod Park
+site.34,22-Aug-18,11:00am,43.515739,-79.720604,Golf/tennis park
+site.35,22-Aug-18,11:44am,43.510002,-79.728908,Joshua Creek
+site.38,22-Aug-18,12:25pm,43.506106,-79.744786,Parking lot
+site.39,22-Aug-18,1:11pm,43.501798,-79.759356,Topsoil
+site.40,22-Aug-18,1:51pm,43.490374,-79.75062,Road by farmhouse
+site.41,22-Aug-18,2:30pm,43.480277,-79.760219,King's Christian College
+site.42,22-Aug-18,3:30pm,43.466986,-79.775805,Near dessage business
+site.42.5,24-Aug-18,9:20am,43.501083,-79.758254,Garden center
+site.43,24-Aug-18,9:58am,43.485549,-79.779335,Golf club
+site.44,24-Aug-18,10:42am,43.476566,-79.796885,Fogolars club
+site.45,24-Aug-18,11:25am,43.467009,-79.807495,Landscape supply company
+site.46,24-Aug-18,12:00pm,43.457168,-79.81844,"Laughton training, T intersection"
+site.47,24-Aug-18,12:47pm,43.432256,-79.829622,"Applebe water haulage, T intersection"
+site.48,24-Aug-18,1:34pm,43.400248,-79.848456,Driveway
+site.49,24-Aug-18,2:08pm,43.419732,-79.827161,Roadside yard
+site.50,24-Aug-18,2:38pm,43.436542,-79.8091,Roadside yard
