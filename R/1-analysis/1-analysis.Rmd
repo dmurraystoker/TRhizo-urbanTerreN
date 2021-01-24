@@ -1,0 +1,954 @@
+---
+title: "Ecological consequences of urbanization on a legume-rhizobia mutualism"
+subtitle: "TRhizo-urbanTerreN"
+author:
+  - David Murray-Stoker
+  - Marc T. J. Johnson
+csl: ecology.csl
+output: 
+  pdf_document: 
+    latex_engine: xelatex
+    fig_caption: yes
+bibliography: TRhizo-urbanTerreN.bib
+always_allow_html: true
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+kableExtra::usepackage_latex("float")
+options(knitr.graphics.error = FALSE)
+```
+
+```{r Load Package for RMarkdown, include = FALSE}
+library(kableExtra)
+library(knitr)
+```
+
+
+## Background
+
+Urbanization is a major driver of ecosystem change at local and global scales, consistently altering the ecological setting in terms of both biotic and abiotic factors [@grimm_et_al_2008; @seto_et_al_2010]. Biotic changes frequently include fragmented habitats, homogenization of species composition, reduced abundance and diversity of native species, reduced vegetation cover, and increased abundance of non-native species [@mckinney_2002; @grimm_et_al_2008; @groffman_et_al_2014; @aronson_et_al_2016]. Common changes to the abiotic environment include increased impervious surface cover, elevated temperatures, higher pollution levels (e.g., air, water, light, noise), and increased nutrient deposition [@grimm_et_al_2008; @groffman_et_al_2014; @stevens_et_al_2018]. However, there is limited research regarding the direct and indirect impacts of biotic and abiotic changes on species interactions in urban environments [@youngsteadt_et_al_2015; @miles_et_al_2019]. Elucidating how urbanization affects the ecological consequences of species interactions is important for understanding the drivers of biodiversity and ecosystem change in urban environments.
+
+Species interactions are key determinants of community composition [@wisz_et_al_2013; @leibold_chase_2017], but urbanization can disrupt these interactions [@aronson_et_al_2016; @miles_et_al_2019] and their associated ecosystem functions [@ziter_2016]. In urban landscapes, natural habitats are frequently fragmented and degraded, which can result in reduced species diversity and altered community composition [@williams_et_al_2009; @aronson_et_al_2016]. Such ecological changes can alter antagonistic interactions [e.g., predator-prey, host-parasite; @rocha_fellowes_2018; @parsons_et_al_2019], competition [de_leon_et_al_2020; @thomson_page_2020], and mutualisms [@irwin_et_al_2014; @rocha_fellowes_2018; @rivkin_et_al_2020]. Mutualisms can be important for community and ecosystem stability, and disruptions to these interactions caused by urbanization may be particularly problematic for maintaining ecosystem functions. For example, pollinator abundance, diversity, and composition often change with urbanization [@harrison_et_al_2018; @santangelo_et_al_2020], which can shift the balance of the benefits conveyed between interacting plants and pollinators [@irwin_et_al_2014; @rivkin_et_al_2020; @santangelo_et_al_2020]. As another example, plant-microbe interactions are important for community assembly and nutrient cycling [@van_der_heijden_et_al_2008], and urbanization can affect these interactions through altered soil chemistry mediated by pollution and nutrient deposition [@grimm_et_al_2008; @stevens_et_al_2018]. As plant-microbe interactions are frequently nutrient-provisioning mutualisms, pollution and nutrient deposition underlying diversity and compositional change can have cascading effects on nutrient cycles in urban ecosystems [@galloway_et_al_2003; @kaye_et_al_2006]. More broadly, if urbanization frequently alters mutualistic interactions, this may have cascading effects on communities and ecosystems.
+
+Mutualisms between legumes and rhizobia are an ideal system for evaluating the ecological impacts of urbanization on species interactions. In these mutualisms, rhizobia fix atmospheric nitrogen in exchange for photosynthate and housing in nodules by their host plant [@hirsch_1992; @poole_et_al_2018). Urbanization can disrupt these interactions, specifically through nitrogen (N) deposition and enrichment [@grimm_et_al_2008; @zhang_et_al_2012]. Nitrogen deposition can inhibit the formation of nodules [@streeter_wong_1988; @omrane_chiurazzi_2009], precluding the development of the mutualism or reducing plant reliance on rhizobia for providing N [@heath_tiffin_2007; @weese_et_al_2015; @regus_et_al_2017]. Additionally, N deposition can reduce N fixation rates by rhizobia [@cleland_harpole_2010; @zheng_et_al_2019]. Although N deposition and short-term application of nutrient-rich fertilizers can benefit both legumes and rhizobia [@simonsen_et_al_2015; @forrester_ashman_2018), chronic and long-term exposure to increased N can reduce the ecological benefits of N fixation and cause the evolution of less beneficial rhizobia [@weese_et_al_2015; @regus_et_al_2017]. By using the legume-rhizobia mutualism as a model system, it is possible to link urbanization and nutrient deposition to altered interactions in an ecologically-important mutualism.
+
+In this study, we evaluated the hypothesis that urbanization alters the ecological and ecosystem-level consequences of a nutrient-provisioning mutualism. We used the mutualism between the legume white clover (*Trifolium repens*) and its rhizobial symbiont (*Rhizobium leguminosarum* symbiovar *trifolii*) as a tractable model interaction. We conducted our study along an urbanization gradient in Toronto, Canada (Fig. 1). Our study focused on three primary questions: (Q1) does rhizobia nodulation vary along an urbanization gradient? (Q2) How does the source of plant nitrogen (i.e., from soil or gaseous N2 fixed by rhizobia) change along the urbanization gradient? And (Q3) how do urban landscape features influence the interactions between soil N, plant N, and rhizobia nodulation? We predicted that: (1) urbanization would alter investment in rhizobia by T. repens, causing increased nodulation with decreased urbanization; (2) increased N availability in the soil due to urbanization would reduce N fixation by rhizobia and alter the source of N for T. repens; and (3) the changes in landscape features associated with urbanization cause direct and indirect effects on ecosystem structure and the white clover-rhizobium mutualism (Fig. 2).
+
+```{r Site Map, echo = FALSE, fig.align = "center", out.width = "85%", fig.cap = "Map of the urbanization gradient in the Greater Toronto Area, ON, Canada displaying all 49 sampling sites for the study. The inset displays an illustration of a typical white clover individual sampled in the field, and the callout depicts a nodule attached to the root. Satellite imagery was taken in 2018 and retrieved from Google, and the illustration was provided by Kelly Murray-Stoker."}
+knitr::include_graphics(paste0(getwd(), "/figures/fig_1-site_map.jpg"))
+```
+
+\newpage
+## Questions
+
+1. How does investment in nodules by *Trifolium repens* vary along the urbanization gradient?
+2. How does the source of N for *T. repens* change along the urbanization gradient?
+3. How do landscape metrics, soil N, nodule density, and white clover $\delta$^15^N interact?
+
+
+## Hypotheses & Predictions
+
+Hypothesis 1:
+
+* Urbanization alters investment in rhizobia (measured as nodule density/count) by *T. repens*.
+	+ Prediction: Nodule density will increase with increasing distance from the urban center.
+	+ Prediction: Nodule density will decrease with increasing percent ISC.
+	+ Prediction: Nodule density will increase with increasing NDVI.
+
+Hypothesis 2:
+
+* Increased N availability in the soil due to urbanization reduces the need for N fixation by rhizobia.
+	+ Prediction: N source of *T.repens*, measured as leaf tissue $\delta$^15^N, will shift from direct uptake (higher $\delta$^15^N) to N fixation (lower $\delta$^15^N) with (1) increasing distance from the urban center, (2) decreasing percent ISC, and (3) increasing NDVI.
+
+Hypothesis 3: 
+
+* Urbanization impacts the landscape, causing cascading direct and indirect effects on ecosystem structure and the white clover-rhizobia mutualism.
+ + Predictions are displayed in Figure 1.
+ 
+```{r Hypothesized SEM Figure, echo = FALSE, fig.align = "center", out.width = "85%", fig.cap = "Hypothesized structural equation model specifying hypothesized causal and correlational pathways and the associated direction of each relationship."}
+knitr::include_graphics(paste0(getwd(), "/figures/fig_2-model_SEM.jpg"))
+```
+
+
+\newpage
+## Load Packages & Data
+
+Data and R packages required for data management and analyses are loaded into the environment using R (version 4.0.2, R Core Team 2020) in the RStudio environment (version 1.4.869, RStudio Team 2020). Packages used for data management and statistical analyses:
+
+Data Management
+
+* tidyverse (version 1.3.0): data management and summaries (dplyr, tidyr)
+* geosphere (version 1.5-10): calculating distance from the urban center
+* MODISTools (version 1.1.1): downloading and compiling NDVI data
+
+Statistical Analyses
+
+* lme4 (version 1.1-26): linear mixed effects models
+* lmerTest (version 3.1-2): wrapper for lme4
+* MuMIn (version 1.43.17): calculating marginal and conditional $R^2$ for linear mixed-effects models
+* mgcv (version 1.8-33): generalized additive models (GAMs)
+* DHARMa (version 0.3.3.0): model diagnostics
+* lavaan (version 0.6-7): structural equation modelling (SEM)
+
+
+```{r Load Packages & Data, include = FALSE}
+library(broom)
+library(corrplot)
+library(DHARMa)
+library(geosphere)
+library(lavaan)
+library(lme4)
+library(lmerTest)
+library(mgcv)
+library(MODISTools)
+library(MuMIn)
+
+## Load the tidyverse
+library(tidyverse) 
+
+## Load starting data (time-saving measure)
+#load("R/1-analysis/1-analysis-data.RData")
+
+## Read in data
+site.data        <- read.csv("data/TRhizo-site_information.csv")
+nodule.data      <- read.csv("data/TRhizo-nodule_counts.csv") %>% na.omit()
+landscape.data   <- read.csv("data/TRhizo-landscape_data.csv")
+soil.chemistry   <- read.csv("data/TRhizo-soil_chemistry.csv")
+clover.chemistry <- read.csv("data/TRhizo-clover_tissue_chemistry.csv")
+
+## Calculate nodule density
+nodule.data$nod.density <- nodule.data$total.nod/nodule.data$total.root.L
+
+## Merge data
+full.data <- landscape.data %>% 
+	full_join(soil.chemistry, by = "site.ID") %>% 
+	full_join(clover.chemistry, by = "site.ID")
+
+## Load final workspace (transparency and reproducibility)
+load("R/1-analysis/1-analysis-workspace.RData")
+```
+
+
+## Distance from the Urban Center
+
+The distance from the urban center was calculated for each site using a custom function. Latitude and longitude values for each site were the input, and the distance for each site from the urban center was calculated as the distance on an ellipsoid (i.e. the geodesic distance). Coordinates for the urban center were selected as the Toronto City Hall (43.651536, -79.383276).
+
+```{r Distance from the Urban center, include = FALSE}
+distance.data <- data.frame("distance.2.UC" = numeric(length = 49))
+
+for(j in 1:49){
+	site.2.UC <- distm(c(site.data[j, 5], site.data[j, 4]), 
+								     c(-79.383276, 43.651536), 
+								     fun = distGeo)
+	
+	site.2.UC.km <- site.2.UC/1000
+	
+	distance.data[j, ] <- site.2.UC.km
+}
+
+## Add a site.ID identifier to each row
+distance.data$site.ID <- site.data$site.ID
+```
+
+
+## MODIS Normalized Difference Vegetation Index
+
+The Normalized Difference Vegetation Index (NDVI) was calculated for each site utilizing functions in the MODISTools package. NDVI was calculated from 1 June-31 August for each year from 2014-2018 to generate a mean NDVI for each site. Each site received 6 measurements per year, for a total of 30 measurements. NDVI was calculated every $\approx$ 16-day interval at a spatial resolution of 250 m.
+
+```{r Download NDVI Data, eval = FALSE, include = FALSE}
+## Basic site info for downloading NDVI data
+NDVI.info <- data.frame("site.ID" = rep(site.data$site.ID, 5),
+												"lat"     = rep(site.data$latitude, 5),
+												"long"    = rep(site.data$longitude, 5),
+												"start"   = c(rep("2014-06-01", 49), rep("2015-06-01", 49), 
+																			rep("2016-06-01", 49), rep("2017-06-01", 49),
+												              rep("2018-06-01", 49)),
+												"end"     = c(rep("2014-08-31", 49), rep("2015-08-31", 49), 
+																			rep("2016-08-31", 49), rep("2017-08-31", 49),
+												              rep("2018-08-31", 49)))
+
+## Set empty dataframe for NDVI data
+NDVI.full.data <- data.frame()
+
+## Retrieve NDVI data from MODIS
+for(j in 1:length(NDVI.info$site.ID)){
+	## Download the MODIS NDVI data for each site along the urbanization gradient
+	NDVI.bands <- mt_subset(product   = "MOD13Q1",
+													band      = "250m_16_days_NDVI",
+													lat       = NDVI.info[j, 2],
+													lon       = NDVI.info[j, 3],
+													start     = NDVI.info[j, 4],
+													end       = NDVI.info[j, 5],
+													site_name = NDVI.info[j, 1],
+													internal  = TRUE,
+													progress  = TRUE)
+
+  ## Add NDVI values to the dataframe
+	NDVI.full.data <- NDVI.full.data %>% bind_rows(NDVI.bands)
+}
+```
+
+```{r Summarize NDVI Data, include = FALSE}
+NDVI.data <- aggregate(value ~ site, data = NDVI.full.data, FUN = mean)
+colnames(NDVI.data) <- c("site.ID", "NDVI")
+```
+
+
+## Data Management
+
+Nodule densities for each *T. repens* individual were calculated as the number of nodules divided by the length of root measured. Nodule density, distance from the urban center data, and NDVI data were than joined to the working full dataframe to create a final working dataframe.
+
+```{r Nodule Density and Count Data, include = FALSE}
+## Aggregate nod density and count by site for later analyses
+nod.density.data <- aggregate(nod.density ~ site.ID, FUN = mean, data = nodule.data)
+nod.count.data   <- aggregate(total.nod ~ site.ID, FUN = mean, data = nodule.data)
+```
+
+```{r Compile Final Dataframe, include = FALSE}
+## Merge all data into final data frame
+final.data <- full.data %>% 
+	full_join(distance.data, by = "site.ID") %>%
+	full_join(NDVI.data, by = "site.ID") %>%
+	full_join(nod.density.data, by = "site.ID") %>%
+	full_join(nod.count.data, by = "site.ID")
+```
+
+
+## Nodule Density & Count Correlation
+
+Nodule density and count were compared using a Pearson correlation test. Both of these measures provide estimates of rhizobia fitness and investment by the host plant. If both metrics are significantly- and positively-correlated, that would suggest either metric would be suitable to answer the research question.
+
+
+```{r Nodule Density and Count Correlation, include = FALSE}
+nodule.correlation <- cor.test(final.data$nod.density, final.data$total.nod, 
+															 method = "pearson", alternative = "two.sided")
+```
+
+```{r Nodule Correlation Results, echo=FALSE, results = "hold"}
+kable(tidy(nodule.correlation), booktabs = TRUE, digits = 4, caption = "Summary of the nodule density and count correlation.") %>%
+	kable_styling(latex_options = c("HOLD_position", "scale_down", "striped"))
+```
+
+Nodule density and count were highly correlated ($P < 0.00001$).
+
+
+\newpage
+## Question 1: How does investment in nodules by *Trifolium repens* vary along the urbanization gradient?
+
+Hypothesis 1:
+
+* Urbanization alters investment in rhizobia (measured as nodule density) by *T. repens*.
+	+ Prediction: Nodule density will increase with increasing distance from the urban center.
+	+ Prediction: Nodule density will decrease with increasing percent ISC.
+	+ Prediction: Nodule density will increase with increasing NDVI.
+
+
+### Nodule Density Mixed Models
+
+Linear mixed-effects models of nodule density against distance from the urban center, percent ISC, and NDVI were fitted. Each mixed model was fitted as:
+
+$$ nodule\ density = intercept + x_i + (1\ |\ site) + e_i$$
+
+where nodule density was the response, $x_i$ represents the fixed effect (distance, ISC, or NDVI), site was a random effect, and $e_i$ was the residual error associated with the fixed effect. All predictor and response variables for the mixed model were scaled and centered on the mean prior to analysis (i.e. mean $= 0$, standard deviation $= 0$). For this analysis, each white clover was treated as a replicate and sampling site was fitted as the random effect. 
+
+Given high pairwise correlations ($r > |0.5|$) contributing to multicollinearity, a full model with distance, ISC, and NDVI was not fitted; all variables were later integrated using structural equation modelling.
+
+```{r Format Data for Regressions, include = FALSE}
+regression.data.bin.1 <- merge(nodule.data, distance.data, 
+															 by = "site.ID", all = TRUE)
+regression.data.bin.2 <- merge(regression.data.bin.1, landscape.data, 
+															 by = "site.ID", all = TRUE)
+regression.data.bin.3 <- merge(regression.data.bin.2, NDVI.data, 
+															 by = "site.ID", all = TRUE)
+
+## Scale variables for use in the mixed models
+regression.data <- as.data.frame(scale(regression.data.bin.3[, -c(1:14, 18:22, 24:27)], 
+																			 center = TRUE, scale = TRUE)) %>% na.omit
+
+## Add site ID
+regression.data$site.ID <- nodule.data$site.ID
+```
+
+
+```{r Nodule Density Mixed Model (Distance), include = FALSE}
+## Nodule density mixed model
+nod.dens.distance.lmm <- lmer(nod.density ~ distance.2.UC + (1 | site.ID),
+															data = regression.data)
+```
+
+```{r Nodule Density Mixed Model (Distance) R-squared, include = FALSE}
+r.squaredGLMM(nod.dens.distance.lmm)
+# Marginal R-squared = 0.021, Conditional R-squared = 0.147
+```
+
+```{r Nodule Density Distance Mixed Model-Diagnostic Plots, include = FALSE}
+## Refit to lme4 lmerMod class; model coefficients are identical
+nod.dens.distance.lme4 <- lme4::lmer(nod.density ~ distance.2.UC + (1 | site.ID),
+																		 data = regression.data)
+
+## Simulated residuals
+nod.dens.distance.sim.output <- simulateResiduals(nod.dens.distance.lme4, n = 500, plot = FALSE)
+
+## Visual assessment
+plot(nod.dens.distance.sim.output)
+
+## Diagnostic tests
+testUniformity(nod.dens.distance.sim.output) # Deviation of residuals significant
+testOutliers(nod.dens.distance.sim.output)   # Significant outliers detected; not removed
+testDispersion(nod.dens.distance.sim.output) # No significant dispersion
+testQuantiles(nod.dens.distance.sim.output)  # Significant quantile deviations
+```
+
+
+```{r Nodule Density Mixed Model (ISC), include = FALSE}
+## Nodule density mixed model
+nod.dens.ISC.lmm <- lmer(nod.density ~ pct.ISC + (1 | site.ID),
+												 data = regression.data)
+```
+
+```{r Nodule Density Mixed Model (ISC) R-squared, include = FALSE}
+r.squaredGLMM(nod.dens.ISC.lmm)
+# Marginal R-squared = 0.039, Conditional R-squared = 0.151
+```
+
+```{r Nodule Density ISC Mixed Model-Diagnostic Plots, include = FALSE}
+## Refit to lme4 lmerMod class; model coefficients are identical
+nod.dens.ISC.lme4 <- lme4::lmer(nod.density ~ pct.ISC + (1 | site.ID),
+																data = regression.data)
+
+## Simulated residuals
+nod.dens.ISC.sim.output <- simulateResiduals(nod.dens.ISC.lme4, n = 500, plot = FALSE)
+
+## Visual assessment
+plot(nod.dens.ISC.sim.output)
+
+## Diagnostic tests
+testUniformity(nod.dens.ISC.sim.output) # Deviation of residuals significant
+testOutliers(nod.dens.ISC.sim.output)   # Significant outliers detected; not removed
+testDispersion(nod.dens.ISC.sim.output) # No significant dispersion
+testQuantiles(nod.dens.ISC.sim.output)  # Significant quantile deviations
+```
+
+
+```{r Nodule Density Mixed Model (NDVI), include = FALSE}
+## Nodule density mixed model
+nod.dens.NDVI.lmm <- lmer(nod.density ~ NDVI + (1 | site.ID),
+													data = regression.data)
+```
+
+```{r Nodule Density Mixed Model (NDVI) R-squared, include = FALSE}
+r.squaredGLMM(nod.dens.NDVI.lmm)
+# Marginal R-squared = 0.023, Conditional R-squared = 0.146
+```
+
+```{r Nodule Density NDVI Mixed Model-Diagnostic Plots, include = FALSE}
+## Refit to lme4 lmerMod class; model coefficients are identical
+nod.dens.NDVI.lme4 <- lme4::lmer(nod.density ~ NDVI + (1 | site.ID),
+																 data = regression.data)
+
+## Simulated residuals
+nod.dens.NDVI.sim.output <- simulateResiduals(nod.dens.NDVI.lme4, n = 500, plot = FALSE)
+
+## Visual assessment
+plot(nod.dens.NDVI.sim.output)
+
+## Diagnostic tests
+testUniformity(nod.dens.NDVI.sim.output) # Deviation of residuals significant
+testOutliers(nod.dens.NDVI.sim.output)   # Significant outliers detected; not removed
+testDispersion(nod.dens.NDVI.sim.output) # No significant dispersion
+testQuantiles(nod.dens.NDVI.sim.output)  # Significant quantile deviations
+```
+
+
+\newpage
+### Nodule Density Mixed Models-Coefficients
+
+```{r Nodule Density Mixed Model (Distance) Coefficients, echo = FALSE, results = "hold", warning = FALSE}
+kable(coef(summary(nod.dens.distance.lmm)),
+			booktabs = TRUE, digits = 4, 
+			caption = "Coefficients of the nodule density by distance mixed model. Model $R^{2}_{conditional} = 0.147$.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+```{r Nodule Density Mixed Model (ISC) Coefficients, echo = FALSE, results = "hold", warning = FALSE}
+kable(coef(summary(nod.dens.ISC.lmm)),
+			booktabs = TRUE, digits = 4, 
+			caption = "Coefficients of the nodule density by ISC mixed model. Model $R^{2}_{conditional} = 0.151$.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+```{r Nodule Density Mixed Model (NDVI) Coefficients, echo = FALSE, results = "hold", warning = FALSE}
+kable(coef(summary(nod.dens.NDVI.lmm)),
+			booktabs = TRUE, digits = 4, 
+			caption = "Coefficients of the nodule density by NDVI mixed model. Model $R^{2}_{conditional} = 0.146$.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+
+\newpage
+### Nodule Density Mixed Models-F Tests of Fixed Effects
+
+```{r Nodule Density Mixed Model (Distance) F Tests, echo = FALSE, results = "hold", warning = FALSE}
+kable(tidy(anova(nod.dens.distance.lmm, type = "II", ddf = "Satterthwaite")),
+			booktabs = TRUE, digits = 4, 
+			caption = "Summary of the Type II Analysis of Variance Table with Satterthwaite's method for the nodule density by distance from the urban center mixed model.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+```{r Nodule Density Mixed Model (ISC) F Tests, echo = FALSE, results = "hold", warning = FALSE}
+kable(tidy(anova(nod.dens.ISC.lmm, type = "II", ddf = "Satterthwaite")),
+			booktabs = TRUE, digits = 4, 
+			caption = "Summary of the Type II Analysis of Variance Table with Satterthwaite's method for the nodule density by ISC mixed model.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+```{r Nodule Density Mixed Model (NDVI) F Tests, echo = FALSE, results = "hold", warning = FALSE}
+kable(tidy(anova(nod.dens.NDVI.lmm, type = "II", ddf = "Satterthwaite")),
+			booktabs = TRUE, digits = 4, 
+			caption = "Summary of the Type II Analysis of Variance Table with Satterthwaite's method for the nodule density by NDVI mixed model.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+
+\newpage
+```{r Nodule Density Figure, echo = FALSE, fig.align = "center", fig.pos = "H", out.width = "85%", results = "hold", fig.cap = "Plot of nodule density against distance from the urban center (a), percent ISC (b), and NDVI (c)."}
+knitr::include_graphics(paste0(getwd(), "/figures/fig_3-nod_density.jpg"))
+```
+
+
+### Question 1: How does investment in nodules by *Trifolium repens* vary along the urbanization gradient?
+
+Our hypothesis and predictions were supported. Nodule density increased with increasing distance from the urban center ($\beta = 0.146$, $P = 0.031$) and increasing NDVI ($\beta = 0.152$, $P = 0.021$), and nodule density decreased with increasing percent ISC ($\beta = -0.199$, $P < 0.001$).
+
+
+\newpage
+## Question 2: How does the source of N for *T. repens* change along the urbanization gradient?
+
+Hypothesis 2:
+
+* Increased N availability in the soil due to urbanization reduces the need for N fixation by rhizobia.
+	+ Prediction: N source of *T.repens*, measured as leaf tissue $\delta$^15^N, will shift from direct uptake (higher $\delta$^15^N) to N fixation (lower $\delta$^15^N) with (1) increasing distance from the urban center, (2) decreasing percent ISC, and (3) increasing NDVI.
+
+
+### White Clover Processing & $\delta$^15^N
+
+Composite leaf tissue samples for each population were generated by taking one leaf from each of the 10 collected *T. repens* individuals, and the composite samples were then freeze dried, ground and homogenized using a tissue grinder, and dried at 60$^\circ$C before weighing at a micro-balance. Samples were analyzed for $\delta$^15^N at the Stable Isotope Ecology Laboratory at the University of Georgia. White clover leaf tissue was analyzed for $\delta$^15^N to identify the source of N used by the plant. Plants depleted in $\delta$^15^N acquire N primarily from N fixation, while plants enriched in $\delta$^15^N acquire N primarily from the soil [@hogberg_1997; @michener_and_lajtha_2007]. 
+
+
+### White Clover $\delta$^15^N Generalized Additive Models
+
+White clover $\delta$^15^N was analyzed using generalized additive models (GAMs), which explicitly model non-linearities in the data using smooths [@hastie_and_tibshirani_1986]. GAMs of white clover $\delta$^15^N against distance from the urban center, percent ISC, and NDVI were fitted. Each univariate GAM was fitted as:
+
+$$\delta^{15}N = intercept + s(x_i) + e_i$$
+where $s$ represents a non-linear smoothing function for each predictor (distance, ISC, or NDVI), and $e$ represents the associated residual error. Thin plate regression splines with shrinkage terms (method call: bs = ”ts”) were used to smooth all predictor variables; each smooth estimate was constrained to average zero. Residual error was assumed independent, with a mean of zero and constant variance. Each GAM was estimated using maximum likelihood.
+
+Given high pairwise correlations ($r > |0.5|$) between distance from the urban center, percent ISC, and NDVI, concurvity would have precluded interpretation of a full model; structural equation modelling was used to integrate variables.
+
+```{r Delta 15N (Distance) GAM, include = FALSE}
+delta15N.distance.gam <- gam(delta15N ~ s(distance.2.UC, bs = "ts"),
+														 method = "ML",
+														 family = gaussian(link = "identity"),
+														 data = final.data)
+```
+
+```{r Delta 15N (Distance) GAM Summary, include = FALSE}
+summary.gam(delta15N.distance.gam)
+# R-squared = 0.671, deviance explained = 71%, P < 0.00001
+```
+
+
+```{r Delta 15N (ISC) GAM, include = FALSE}
+delta15N.ISC.gam <- gam(delta15N ~ s(pct.ISC, bs = "ts"),
+												method = "ML",
+												family = gaussian(link = "identity"),
+												data = final.data)
+```
+
+```{r Delta 15N (ISC) GAM Summary, include = FALSE}
+summary.gam(delta15N.ISC.gam)
+# R-squared = 0.000 deviance explained = 0.00%, P = 0.82
+```
+
+
+```{r Delta 15N (NDVI) GAM, include = FALSE}
+delta15N.NDVI.gam <- gam(delta15N ~ s(NDVI, bs = "ts"), 
+												 method = "ML",
+												 family = gaussian(link = "identity"),
+												 data = final.data)
+```
+
+```{r Delta 15N (NDVI) GAM Summary, include = FALSE}
+summary.gam(delta15N.NDVI.gam)
+# R-squared = 0.000, deviance explained = 0.00%, P = 0.818
+```
+
+
+\newpage
+### White Clover $\delta$^15^N GAM Results
+
+```{r Delta 15N (Distance) GAM Results, echo = FALSE, results = "hold"}
+kable(tidy(delta15N.distance.gam), booktabs = TRUE, digits = 4, 
+			caption = "Summary of the $\\delta^{15}$N by distance from the urban center GAM. Model $R^{2} = 0.671$ and deviance explained $= 71.0$\\%.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+```{r Delta 15N (ISC) GAM Results, echo = FALSE, results = "hold"}
+kable(tidy(delta15N.ISC.gam), booktabs = TRUE, digits = 4, 
+			caption = "Summary of the $\\delta^{15}$N by ISC GAM. Model $R^{2} \\approx 0.000$ and deviance explained $\\approx 0.00$\\%.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+```{r Delta 15N (NDVI) GAM Results, echo = FALSE, results = "hold"}
+kable(tidy(delta15N.NDVI.gam), booktabs = TRUE, digits = 4, 
+			caption = "Summary of the $\\delta^{15}$N by NDVI GAM. Model $R^{2} \\approx 0.000$ and deviance explained $\\approx 0.00$\\%.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+
+\newpage
+```{r Delta 15N GAM Figure, echo = FALSE, fig.align = "center", fig.pos = "H", out.width = "85%", results = "hold", fig.cap = "Plot of $\\delta^{15}$N against distance from the urban center (a), percent ISC (b), and NDVI (c)."}
+knitr::include_graphics(paste0(getwd(), "/figures/fig_4-delta15N.jpg"))
+```
+
+
+### Question 2: How does the source of N for *T. repens* change along the urbanization gradient?
+
+Our hypothesis and prediction were partially supported. As measured with $\delta$^15^N, the source of N for *T. repens* was typically acquisition from the soil (higher $\delta$^15^N) in the urban center (0-10 km from the urban center), shifting primarily to N fixation (lower $\delta$^15^N) for most of the urbanization gradient (10-40 km from the urban center) but increasing to N acquisition from the soil (higher $\delta$^15^N) at the end of the urbanization gradient (40-45 km from the urban center). These data suggest that *T. repens* does acquire N from different sources along the urbanization gradient, with N acquisition from the soil at the urban and rural extremes of the gradient and N fixation for the majority of the gradient.
+
+
+\newpage
+## Question 3: How do landscape metrics, soil N, nodule density, and white clover $\delta$^15^N interact?
+
+Hypothesis 3: 
+
+* Urbanization impacts the landscape, causing cascading direct and indirect effects on ecosystem structure and the white clover-rhizobia mutualism.
+
+
+### Structural Equation Modelling
+
+A structural equation model (SEM) was constructed to evaluate the direct and indirect causal pathways through which distance from the urban center, landscape metrics, soil N, nodule density, and $\delta$^15^N interact. Structural equation models are tests of fit to the data, not significant pathways within the SEM [@grace_2006]. Model fit was assessed by comparing expected and observed covariance between predictor and response variables using chi-square tests [@grace_2006]. Structural equation models were considered consistent with the data when expected and observed covariance was not significantly different. All data were scaled (i.e. centered on the mean and then divided by the standard deviation; mean $= 0$, standard deviation $= 0$) prior to analysis, and the SEM was estimated by maximum likelihood with robust Satorra-Bentler test statistics. Model results were reported as standardized path coefficients, which show the direction and magnitude of the causal relationship between variables and allow for the comparison of relationship strengths within the SEM [@grace_2006]. 
+
+```{r Scale Data for the SEM, include=FALSE}
+SEM.data <- as.data.frame(scale(final.data[, -c(1:6, 8:11, 14, 19)], 
+																center = TRUE, scale = TRUE)) %>% 
+	na.omit
+```
+
+```{r Define the Synthesis SEM, include=FALSE}
+synthesis.SEM <- "## Causal pathways
+                  pct.ISC       ~ distance.2.UC
+                  NDVI          ~ distance.2.UC
+                  bulk.pct.N    ~ distance.2.UC + pct.ISC + NDVI
+                  adj.pct.N     ~ pct.ISC + NDVI + delta15N
+                  nod.density   ~ distance.2.UC + pct.ISC + NDVI + bulk.pct.N
+                  delta15N      ~ distance.2.UC + pct.ISC + NDVI + bulk.pct.N + nod.density
+                 
+                  ## Correlational pathways
+                  bulk.pct.N ~~ adj.pct.N
+                  pct.ISC    ~~ NDVI
+                  adj.pct.N  ~~ nod.density"
+```
+
+```{r Fit the Synthesis SEM, include=FALSE}
+synthesis.SEM.fit <- sem(synthesis.SEM, data = SEM.data, fixed.x = TRUE, estimator = "MLM")
+```
+
+```{r Synthesis SEM Summary, include=FALSE}
+summary(synthesis.SEM.fit, rsq = TRUE, standardized = TRUE, modindices = FALSE)
+## Model fit: chi-squared = 0.009, df = 1, P = 0.926
+```
+
+```{r Mod Indices to Improve the Synthesis SEM Fit, include=FALSE}
+modindices(synthesis.SEM.fit)
+```
+
+```{r Synthesis Path Coefficients, echo=FALSE}
+synthesis.path.coefficients <- standardizedSolution(synthesis.SEM.fit, type = "std.all")
+
+kable(synthesis.path.coefficients[1:20, ], booktabs = TRUE, digits = 4, 
+			caption = "Path coefficients for each causal pathway in the SEM. Model fit: $\\chi^{2}$ = 0.009, $df = 1$, $P = 0.926$. $R^{2}$ values of endogenous variables: percent ISC = 0.299, NDVI = 0.394, bulk soil N = 0.113, adjacent soil N = 0.144, nodule density = 0.209, and $\\delta^{15}$N = 0.230.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+
+```{r Final SEM Figure, echo = FALSE, fig.align = "center", out.width = "85%", results = "hold", fig.cap = "Path diagram showing the causal interactions between distance from the urban center, percent ISC, NDVI, soil N (bulk and adjacent), nodule density, and white clover $\\delta^{15}$N. The model followed the hypothesized structure and had good fit to the data ($\\chi^{2} = 0.009$, $df = 1$, and $P = 0.926$). Green lines represent positive pathways, while purple lines represent negative pathways; non-significant pathways are not displayed. Standardized path coefficients, which show the direction and magnitude of the relationship between variables, are reported next to each line. Lines represent significant causal pathways in the model, with single-headed arrows indicating a unidirectional pathway and double-headed arrows indicating correlation between variables. The $R^2$ is reported for each endogenous variable."}
+knitr::include_graphics(paste0(getwd(), "/figures//fig_5-SEM-scaled_arrows.jpg"))
+```
+
+
+\newpage
+### SEM Interpretation
+
+The hypothesized SEM had good fit to the data ($\chi^2 = 0.009$, $df = 1$, $P = 0.926$). Distance from the urban center had a direct negative effect on white clover $\delta$^15^N: as the distance from the urban center increased, white clover $\delta$^15^N decreased (path coefficient $= -0.60$), suggesting increased white clover acquisition of N from N fixation with decreasing urbanization. Bulk soil N decreased with increasing distance from the urban center (path coefficient $= -0.29$). Further effects of distance from the urban center were mediated through percent ISC on nodule density (compound path coefficient $= |-0.55| \times |-0.39| = 0.21$) and bulk soil N on white clover $\delta$^15^N (compound path coefficient $= |-0.29| \times |-0.23| = 0.07$). Although distance from the urban center positively affected NDVI (path coefficient $= 0.63$), there were no further effects of NDVI. Percent ISC and NDVI were negatively correlated (path coefficient $= -0.45$).
+
+
+Bulk soil N had a negative effect on white clover $\delta$^15^N, where increased bulk soil N decreased white clover $\delta$^15^N (path coefficient $= -0.23$). Nodule density and adjacent soil N were negatively correlated (path coefficient $= -0.29$), which did not simply follow from our predictions. It was expected that higher nodule densities would increase adjacent soil N. A potential explanation for this result is that nodulation can be inhibited by high N in the soil. Additionally, adjacent soil N is not a direct measure of the effects on soil N by N-fixing rhizobia and actual measurements of N fixation and cycling are required to tease apart this pathway. Bulk soil was directly linked to distance from the urban center, and was then entangled in correlational pathways between adjacent soil N and nodule density.
+
+From the responses between soil N, nodule density, and $\delta$^15^N, it can be inferred that: (1) effects of nodulation and N fixation can depend on local N availability at fine spatial scales in the urban landscape and (2) decreased adjacent soil N with increasing nodule density could suggest either inhibition of nodulation by high N or less-beneficial rhizobia at high densities reducing adjacent soil N.
+
+
+## Conclusion
+
+There is strong support for some hypotheses and predictions but limited or no support for other hypotheses and predictions. It can be concluded, however, that urbanization does have ecological consequences on the *T.repens*-rhizobia mutualism, with the strongest evidence coming from: (1) increased investment by *T.repens* in nodules with decreasing impervious surface cover and increasing distance from the urban center and NDVI (Question 1, Figure 2), (2) *T.repens* acquiring N from N-fixing rhizobia in the middle of the urbanization gradient but having direct uptake at the urban and rural extremes (Question 2, Figure 3), and (3) direct and indirect effects of the urban landscape on ecosystem structure (soil N) and the *T.repens*-rhizobia mutualism (Question 3, Figure 4).
+
+
+\newpage
+## Supplementary: Variable Correlations
+
+Correlations between variables were calculated to determine which combinations could be collinear in later mixed-effects models, generalized additive models, or the structural equation model.
+
+
+```{r Correlation Matrix, include=FALSE}
+correlation.matrix <- as.matrix(final.data[, c(16, 7, 17, 13, 12, 18:19)]) %>% 
+	na.omit() %>% 
+	cor(method = "pearson")
+```
+
+
+```{r Correlation Plot, echo=FALSE, fig.align = "center", fig.pos = "H", out.width = "85%", results = "hold", fig.cap = "Correlations between all environment, landscape, and response variables in the dataset."}
+knitr::include_graphics(paste0(getwd(), "/figures/fig_S1-correlations.jpg"))
+```
+
+
+\newpage
+## Supplementary: Does soil N content vary along the urbanization gradient?
+
+Hypothesis: 
+
+* N deposition associated with urbanization alters the spatial distribution of N in the soil, affecting background soil N content and the need for N fixation by rhizobia.
+	+ Prediction: Soil N content will decrease with increasing distance from the urban center.
+	+ Prediction: Soil N content will increasing with increasing percent ISC.
+	+ Prediction: Soil N content will decrease with increasing NDVI.
+
+
+### Soil N & Landscape Metrics
+
+Soil cores were collected at each site. Two types of soil core samples were collected: (1) bulk and (2) adjacent. Adjacent soil cores were taken directly adjacent to the collected white clover individual. bulk soil samples were collected in areas without *T. repens* and other legumes (e.g. *Medicago lupulina*). Adjacent soil samples were collected directly adjacent to collected *T. repens* individuals. Ten bulk and 10 adjacent soil cores were taken at each site, with each sample type (bulk and adjacent) combined for a composite sample of each soil core type. Samples were stored at -80$^\circ$C until processing, whereby each sample was filtered through stacked sieves (4.75 mm, 2 mm, 1 mm, and 0.5 mm) to remove large rocks and gravel, soil retained on the 0.5 mm sieve and catch pan collected, and then samples were dried at 60$^\circ$C before weighing at a micro-balance. Soil samples were analyzed for N content to evaluate changes in N content along the urbanization gradient.
+
+Landscape metrics were calculated using remote sensing tools. Percent impervious surface cover for each site using Google Earth Pro. A 100 m radius was drawn around each site, and percent impervious surface cover (ISC) was estimated using polygon areas. Additionally, NDVI for each site was compiled as a measure of greenness for each site.  NDVI was calculated from 1 June-31 August for each year from 2014-2018 to generate a mean NDVI for each site. Each site received 6 measurements per year, for a total of 30 measurements. NDVI was calculated every $\approx$ 16-day interval at a spatial resolution of 250 m.
+
+
+### Soil N Generalized Additive Models
+
+Bulk soil N and adjacent soil N were analyzed using generalized additive models (GAMs), which explicitly model non-linearities in the data using smooths [@hastie_and_tibshirani_1986]. GAMs of bulk soil N and adjacent soil N against distance from the urban center, percent ISC, and NDVI were fitted. Each univariate GAM was fitted as:
+
+$$y_i = intercept + s(x_i) + e_i$$
+where $y_i$ was the soil N measurement (bulk or adjacent) modelled, $s$ represents a non-linear smoothing function for each predictor (distance, ISC, or NDVI), and $e$ represents the associated residual error. Thin plate regression splines with shrinkage terms (method call: bs = ”ts”) were used to smooth all predictor variables; each smooth estimate was constrained to average zero. Residual error was assumed independent, with a mean of zero and constant variance. Each GAM was fit to the family “betar”, part of the mgcv family distributions, to model proportional data. GAMs were estimated using maximum likelihood.
+
+
+```{r Soil N (Bulk) Distance GAM, include = FALSE}
+soil.bulk.N.distance.gam <- gam(bulk.pct.N ~ s(distance.2.UC, bs = "ts"),
+															  family = betar(link = "logit"),
+															  method = "ML",
+															  data = final.data)
+```
+
+```{r Soil N (Bulk) Distance GAM Summary, include = FALSE}
+summary.gam(soil.bulk.N.distance.gam)
+# R-squared = 0.0786, deviance explained = 11%, P = 0.0426
+
+summary.gam(soil.bulk.N.distance.gam)$chi.sq
+# chi-squared = 3.096641
+```
+
+
+```{r Soil N (Bulk) ISC GAM, include = FALSE}
+soil.bulk.N.ISC.gam <- gam(bulk.pct.N ~ s(pct.ISC, bs = "ts"),
+													 family = betar(link = "logit"),
+													 method = "ML",
+												   data = final.data)
+```
+
+```{r Soil N (Bulk) ISC GAM Summary, include = FALSE}
+summary.gam(soil.bulk.N.ISC.gam)
+# R-squared = 0.0286, deviance explained = 6.98%, P = 0.0985
+
+summary.gam(soil.bulk.N.ISC.gam)$chi.sq
+# chi-squared = 1.722189
+```
+
+
+```{r Soil N (Bulk) NDVI GAM, include = FALSE}
+soil.bulk.N.NDVI.gam <- gam(bulk.pct.N ~ s(NDVI, bs = "ts"),
+													  family = betar(link = "logit"),
+													  method = "ML",
+													  data = final.data)
+```
+
+```{r Soil N (Bulk) NDVI GAM Summary, include = FALSE}
+summary.gam(soil.bulk.N.NDVI.gam)
+# R-squared = 0.0112, deviance explained = 1.72%, P = 0.255
+
+summary.gam(soil.bulk.N.NDVI.gam)$chi.sq
+# chi-squared = 0.319269
+```
+
+
+
+```{r Soil N (adjacent) Distance GAM, include = FALSE}
+soil.adj.N.distance.gam <- gam(adj.pct.N ~ s(distance.2.UC, bs = "ts"),
+															 family = betar(link = "logit"),
+															 method = "ML",
+															 data = final.data)
+```
+
+```{r Soil N (adjacent) Distance GAM Summary, include = FALSE}
+summary.gam(soil.adj.N.distance.gam)
+# R-squared = 0.002, deviance explained = 0.843%, P = 0.274
+
+summary.gam(soil.adj.N.distance.gam)$chi.sq
+# chi-squared = 0.1441373
+```
+
+
+```{r Soil N (adjacent) ISC GAM, include = FALSE}
+soil.adj.N.ISC.gam <- gam(adj.pct.N ~ s(pct.ISC, bs = "ts"),
+													family = betar(link = "logit"),
+													method = "ML",
+													data = final.data)
+```
+
+```{r Soil N (adjacent) ISC GAM Summary, include = FALSE}
+summary.gam(soil.adj.N.ISC.gam)
+# R-squared = 0.0691, deviance explained = 8.84%, P = 0.0697
+
+summary.gam(soil.adj.N.ISC.gam)$chi.sq
+# chi-squared = 2.277293
+```
+
+
+```{r Soil N (adjacent) NDVI GAM, include = FALSE}
+soil.adj.N.NDVI.gam <- gam(adj.pct.N ~ s(NDVI, bs = "ts"),
+													 family = betar(link = "logit"),
+													 method = "ML",
+													 data = final.data)
+```
+
+```{r Soil N (adjacent) NDVI GAM Summary, include = FALSE}
+summary.gam(soil.adj.N.NDVI.gam)
+# R-squared = 0.0219, deviance explained = 3.99%, P = 0.175
+
+summary.gam(soil.adj.N.NDVI.gam)$chi.sq
+# chi-squared = 0.8717525
+```
+
+
+\newpage
+### Soil N GAM Results (Supplement)
+
+```{r Soil N GAM (Bulk) Distance GAM Results, echo = FALSE, results = "hold"}
+kable(tidy(soil.bulk.N.distance.gam), booktabs = TRUE, digits = 4, 
+			caption = "Summary of the bulk soil N by distance from the urban center GAM. Model $R^{2} = 0.0786$ and deviance explained $= 11$\\%. Distance $\\chi^2 = 3.0966$.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+```{r Soil N GAM (Bulk) ISC GAM Results, echo = FALSE, results = "hold"}
+kable(tidy(soil.bulk.N.ISC.gam), booktabs = TRUE, digits = 4, 
+			caption = "Summary of the bulk soil N by ISC GAM. Model $R^{2} = 0.0197$ and deviance explained $= 6.11$\\%. Percent ISC $\\chi^2 = 1.7222$.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+```{r Soil N GAM (Bulk) NDVI GAM Results, echo = FALSE, results = "hold"}
+kable(tidy(soil.bulk.N.NDVI.gam), booktabs = TRUE, digits = 4, 
+			caption = "Summary of the bulk soil N by NDVI GAM. Model $R^{2} = 0.0112$ and deviance explained $= 1.72$\\%. NDVI $\\chi^2 = 0.3193$.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+
+\newpage
+```{r Soil N GAM (adjacent) Distance GAM Results, echo = FALSE, results = "hold"}
+kable(tidy(soil.adj.N.distance.gam), booktabs = TRUE, digits = 4, 
+			caption = "Summary of the adjacent soil N by distance from the urban center GAM. Model $R^{2} = 0.0025$ and deviance explained $= 0.843$\\%. Distance $\\chi^2 = 0.1441$.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+```{r Soil N GAM (adjacent) ISC GAM Results, echo = FALSE, results = "hold"}
+kable(tidy(soil.adj.N.ISC.gam), booktabs = TRUE, digits = 4, 
+			caption = "Summary of the adjacent soil N by ISC GAM. Model $R^{2} = 0.0691$ and deviance explained $= 8.84$\\%. Percent ISC $\\chi^2 = 2.2773$.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+```{r Soil N GAM (adjacent) NDVI GAM Results, echo = FALSE, results = "hold"}
+kable(tidy(soil.adj.N.NDVI.gam), booktabs = TRUE, digits = 4, 
+			caption = "Summary of the adjacent soil N by NDVI GAM. Model $R^{2} = 0.0219$ and deviance explained $= 3.99$\\%. NDVI $\\chi^2 = 0.8718$.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+
+\newpage
+```{r Soil N GAM Figure, echo = FALSE, fig.align = "center", fig.pos = "H", out.width = "85%", results = "hold", fig.cap = "Plots of bulk soil N (a-c) and adjacent soil N (d-f) against distance from the urban center (a and d), percent ISC (b and e) and NDVI (c and f)."}
+knitr::include_graphics(paste0(getwd(), "/figures/fig_S2-soil_N.jpg"))
+```
+
+
+### Supplementary: Does soil N content vary along along the urbanization gradient?
+
+Our hypothesis and prediction about soil N content varying along the urbanization gradient were partially supported supported. Bulk soil N was predicted by distance from the urban center and percent ISC, while adjacent soil N was only predicted by percent ISC; neither bulk nor adjacent soil (Figure 5).
+
+
+\newpage
+## Supplementary: Unscaled Nodule Density Mixed Models
+
+Fitting unscaled mixed-effects models for nodule density by distance from the urban center, percent ISC, and NDVI for presentation in the results of the manuscript. The aim is to interpret the model and provide estimates of how a change in $predictor_i$ results in a change in $nodule\ density$.
+
+```{r Unscaled Nodule Density Data, include = FALSE}
+## Unscaled data for presentation in the results
+regression.data_unscaled <- regression.data.bin.3 %>%
+	na.omit()
+```
+
+
+```{r Nodule Density Mixed Model (Distance)-Unscaled, include = FALSE}
+## Nodule density mixed model
+nod.dens.distance.lmm_unscaled <- lmer(nod.density ~ distance.2.UC + (1 | site.ID),
+																			 data = regression.data_unscaled)
+```
+
+```{r Nodule Density Mixed Model (Distance) R-squared-Unscaled, include = FALSE}
+r.squaredGLMM(nod.dens.distance.lmm_unscaled)
+# Marginal R-squared = 0.022, Conditional R-squared = 0.167
+```
+
+```{r Nodule Density Distance Mixed Model-Unscaled-Diagnostic Plots, include = FALSE}
+## Refit to lme4 lmerMod class; model coefficients are identical
+nod.dens.distance.lme4_unscaled <- lme4::lmer(nod.density ~ distance.2.UC + (1 | site.ID),
+																							data = regression.data_unscaled)
+
+## Simulated residuals
+nod.dens.distance.sim.output_unscaled <- simulateResiduals(nod.dens.distance.lme4_unscaled, 
+																													 n = 500, plot = FALSE)
+
+## Visual assessment
+plot(nod.dens.distance.sim.output_unscaled)
+
+## Diagnostic tests
+testUniformity(nod.dens.distance.sim.output_unscaled) # Deviation of residuals significant
+testOutliers(nod.dens.distance.sim.output_unscaled)   # Significant outliers detected; not removed
+testDispersion(nod.dens.distance.sim.output_unscaled) # No significant dispersion
+testQuantiles(nod.dens.distance.sim.output_unscaled)  # Significant quantile deviations
+```
+
+
+```{r Nodule Density Mixed Model (ISC)-Unscaled, include = FALSE}
+## Nodule density mixed model
+nod.dens.ISC.lmm_unscaled <- lmer(nod.density ~ pct.ISC + (1 | site.ID),
+																	data = regression.data_unscaled)
+```
+
+```{r Nodule Density Mixed Model (ISC) R-squared-Unscaled, include = FALSE}
+r.squaredGLMM(nod.dens.ISC.lmm_unscaled)
+# Marginal R-squared = 0.038, Conditional R-squared = 0.166
+```
+
+```{r Nodule Density ISC Mixed Model-Unscaled-Diagnostic Plots, include = FALSE}
+## Refit to lme4 lmerMod class; model coefficients are identical
+nod.dens.ISC.lme4_unscaled <- lme4::lmer(nod.density ~ pct.ISC + (1 | site.ID),
+																				 data = regression.data_unscaled)
+
+## Simulated residuals
+nod.dens.ISC.sim.output_unscaled <- simulateResiduals(nod.dens.ISC.lme4_unscaled,
+																											n = 500, plot = FALSE)
+
+## Visual assessment
+plot(nod.dens.ISC.sim.output_unscaled)
+
+## Diagnostic tests
+testUniformity(nod.dens.ISC.sim.output_unscaled) # Deviation of residuals significant
+testOutliers(nod.dens.ISC.sim.output_unscaled)   # Significant outliers detected; not removed
+testDispersion(nod.dens.ISC.sim.output_unscaled) # No significant dispersion
+testQuantiles(nod.dens.ISC.sim.output_unscaled)  # Significant quantile deviations
+```
+
+
+```{r Nodule Density Mixed Model (NDVI)-Unscaled, include = FALSE}
+## Nodule density mixed model
+nod.dens.NDVI.lmm_unscaled <- lmer(nod.density ~ NDVI + (1 | site.ID),
+																	 data = regression.data_unscaled)
+```
+
+```{r Nodule Density Mixed Model (NDVI) R-squared-Unscaled, include = FALSE}
+r.squaredGLMM(nod.dens.NDVI.lmm_unscaled)
+# Marginal R-squared = 0.042, Conditional R-squared = 0.167
+```
+
+```{r Nodule Density NDVI Mixed Model-Unscaled-Diagnostic Plots, include = FALSE}
+## Refit to lme4 lmerMod class; model coefficients are identical
+nod.dens.NDVI.lme4_unscaled <- lme4::lmer(nod.density ~ NDVI + (1 | site.ID),
+																					data = regression.data_unscaled)
+
+## Simulated residuals
+nod.dens.NDVI.sim.output_unscaled <- simulateResiduals(nod.dens.NDVI.lme4_unscaled, 
+																											 n = 500, plot = FALSE)
+
+## Visual assessment
+plot(nod.dens.NDVI.sim.output_unscaled)
+
+## Diagnostic tests
+testUniformity(nod.dens.NDVI.sim.output_unscaled) # Deviation of residuals significant
+testOutliers(nod.dens.NDVI.sim.output_unscaled)   # Significant outliers detected; not removed
+testDispersion(nod.dens.NDVI.sim.output_unscaled) # No significant dispersion
+testQuantiles(nod.dens.NDVI.sim.output_unscaled)  # Significant quantile deviations
+```
+
+
+
+```{r Nodule Density Mixed Model (Distance) Coefficients-Unscaled, echo = FALSE, results = "hold", warning = FALSE}
+kable(coef(summary(nod.dens.distance.lmm_unscaled)),
+			booktabs = TRUE, digits = 4, 
+			caption = "Coefficients of the unscaled nodule density by distance mixed model.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+```{r Nodule Density Mixed Model (ISC) Coefficients-Unscaled, echo = FALSE, results = "hold", warning = FALSE}
+kable(coef(summary(nod.dens.ISC.lmm_unscaled)),
+			booktabs = TRUE, digits = 4, 
+			caption = "Coefficients of the unscaled nodule density by ISC mixed model.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+```{r Nodule Density Mixed Model (NDVI) Coefficients-Unscaled, echo = FALSE, results = "hold", warning = FALSE}
+kable(coef(summary(nod.dens.NDVI.lmm_unscaled)),
+			booktabs = TRUE, digits = 4, 
+			caption = "Coefficients of the unscaled nodule density by NDVI mixed model.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+
+### Unscaled Nodule Density Mixed Models-F Tests of Fixed Effects
+
+```{r Unscaled Nodule Density Mixed Model (Distance) F Tests, echo = FALSE, results = "hold", warning = FALSE}
+kable(tidy(anova(nod.dens.distance.lmm_unscaled, type = "II", ddf = "Satterthwaite")),
+			booktabs = TRUE, digits = 4, 
+			caption = "Summary of the Type II Analysis of Variance Table with Satterthwaite's method for the unscaled nodule density by distance from the urban center mixed model.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+```{r Unscaled Nodule Density Mixed Model (ISC) F Tests, echo = FALSE, results = "hold", warning = FALSE}
+kable(tidy(anova(nod.dens.ISC.lmm_unscaled, type = "II", ddf = "Satterthwaite")),
+			booktabs = TRUE, digits = 4, 
+			caption = "Summary of the Type II Analysis of Variance Table with Satterthwaite's method for the unscaled nodule density by ISC mixed model.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+```{r Unscaled Nodule Density Mixed Model (NDVI) F Tests, echo = FALSE, results = "hold", warning = FALSE}
+kable(tidy(anova(nod.dens.NDVI.lmm_unscaled, type = "II", ddf = "Satterthwaite")),
+			booktabs = TRUE, digits = 4, 
+			caption = "Summary of the Type II Analysis of Variance Table with Satterthwaite's method for the unscaled nodule density by NDVI mixed model.") %>%
+	kable_styling(latex_options = c("HOLD_position", "striped"))
+```
+
+
+```{r Save Final Workspace, include = FALSE}
+save.image("R/1-analysis/1-analysis-workspace.RData")
+```
+
+
+
+
+\newpage
+## References
+
+
+
+
