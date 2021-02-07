@@ -1,19 +1,17 @@
 #=========================================================================#
-#                                NRSA-FD                                  #
+#                             TRhizo-urbanTerreN                          #
 #=========================================================================#
-
-# National Rivers and Streams Assessment-Functional Diversity (FD)-Figures
 
 # Author: David Murray-Stoker (dstoker92@gmail.com)
 # Last Updated: 30 October 2020
 
 ## Table of Contents
-# Line  21: Load Packages & Data
-# Line  46: Nodule Density Plots
-# Line 112: Plant delta15N GAM Plots 
-# Line 172: Correlation Plot
-# Line 187: Soil N GAM Plots 
-# Line 292: End of Script
+# Line  19: Load Packages & Data
+# Line  44: Nodule Density Plots
+# Line 110: Plant delta15N GAM Plots 
+# Line 170: Correlation Plot
+# Line 185: Soil N GAM Plots 
+# Line 290: End of Script
 
 
 #=========================================================================#
