@@ -52,5 +52,5 @@ To use the data and R code for this project:
 1. `git clone` this repository or download it as a zip folder
 2. Open `R Studio`, go to `file > Open project` and open the `TRhizo-urbanTerreN.Rproj`
 R Project associated with this repository.
-3. The analyses can be prformed by running [1-analysis.Rmd](R/1-analysis/1-analysis.Rmd)
+3. The analyses can be performed by running [1-analysis.Rmd](R/1-analysis/1-analysis.Rmd)
 
