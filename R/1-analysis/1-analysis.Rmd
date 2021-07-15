@@ -19,7 +19,7 @@ kableExtra::usepackage_latex("float")
 options(knitr.graphics.error = FALSE)
 ```
 
-```{r Load Package for RMarkdown, include = FALSE}
+```{r Load Package for R Markdown, include = FALSE}
 library(kableExtra)
 library(knitr)
 ```
@@ -600,7 +600,7 @@ Correlations between variables were calculated to determine which combinations c
 
 
 ```{r Correlation Matrix, include=FALSE}
-correlation.matrix <- as.matrix(final.data[, c(16, 7, 17, 13, 12, 18:19)]) %>% 
+correlation.matrix <- as.matrix(final.data[, c(16, 7, 17, 13, 12, 15, 18:19)]) %>% 
 	na.omit() %>% 
 	cor(method = "pearson")
 ```
