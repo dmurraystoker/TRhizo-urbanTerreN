@@ -416,9 +416,9 @@ nod.dens.distance.figure <- ggscatter(
 	) +
 	scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50), limits = c(0, 50.5)) +
 	scale_y_continuous(breaks = c(0, 0.5, 1.0, 1.5), limits = c(0, 1.65)) +
-	font("xlab", size = 14, color = "gray0") +
-	font("ylab", size = 14, color = "gray0") +
-	font("xy.text", size = 10, color = "gray20")e
+	font("xlab", size = 24, color = "gray0") +
+	font("ylab", size = 24, color = "gray0") +
+	font("xy.text", size = 18, color = "gray20")
 
 ## Export the figure
 ggsave(
@@ -429,7 +429,7 @@ ggsave(
 	width = 8,
 	height = 6,
 	units = "in",
-	dpi = 900
+	dpi = 1200
 )
 
 
@@ -449,9 +449,9 @@ delta15N.distance.gam.figure <- ggscatter(
 	) +
 	scale_x_continuous(breaks = c(0, 10, 20, 30, 40, 50), limits = c(0, 50.5)) +
 	scale_y_continuous(breaks = c(-2.5, 0, 2.5, 5), limits = c(-2.75, 5.5)) +
-	font("xlab", size = 14, color = "gray0") +
-	font("ylab", size = 14, color = "gray0") +
-	font("xy.text", size = 10, color = "gray20")
+	font("xlab", size = 24, color = "gray0") +
+	font("ylab", size = 24, color = "gray0") +
+	font("xy.text", size = 18, color = "gray20")
 
 ## Export the figure
 ggsave(
@@ -462,7 +462,7 @@ ggsave(
 	width = 8,
 	height = 6,
 	units = "in",
-	dpi = 900
+	dpi = 1200
 )
 
 
